@@ -70,11 +70,11 @@
             }
             .sigil-feather {
                 left: 0;
-                background-image: url("media/Weigh/your/feather./feather.gif");
+                background-image: url("media/Weigh/your/feather/feather.gif");
             }
             .sigil-heart {
                 right: 0;
-                background-image: url("media/Weigh/your/heart./heart.gif");
+                background-image: url("media/Weigh/your/heart/heart.gif");
             }
             .judge {
                 position: absolute;   
@@ -132,11 +132,11 @@
                         document.getElementById("random-number").textContent = num;
                         const imgElement = document.getElementById("sinImage");
                         const textElement = document.getElementById("sinText")
-                        const images = {"envy":"media/You/know/what/you've/done./envy.gif", "gluttony":"media/You/know/what/you've/done./gluttony.gif", "greed":"media/You/know/what/you've/done./greed.gif", "lust":"media/You/know/what/you've/done./lust.gif", "pride":"media/You/know/what/you've/done./pride.gif", "sloth":"media/You/know/what/you've/done./sloth.gif", "wrath":"media/You/know/what/you've/done./wrath.gif"};
+                        const images = {"envy":"media/You/know/what/you've/done/envy.gif", "gluttony":"media/You/know/what/you've/done/gluttony.gif", "greed":"media/You/know/what/you've/done/greed.gif", "lust":"media/You/know/what/you've/done/lust.gif", "pride":"media/You/know/what/you've/done/pride.gif", "sloth":"media/You/know/what/you've/done/sloth.gif", "wrath":"media/You/know/what/you've/done/wrath.gif"};
                         if(images[sin]) {
                             imgElement.src = images[sin];
                         } else {
-                            imgElement.src = "media/You/know/what/you've/done./malice.gif";
+                            imgElement.src = "media/You/know/what/you've/done/malice.gif";
                         }
                         if(text) {
                             textElement.textContent = text;
@@ -148,4 +148,5 @@
             </tr>
         </table>
     </body>    
+
 </html>
