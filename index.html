@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Count Your Sins</title>
+        <link rel="icon" type="image/x-icon" href="media/Do/you/wish/to/see/the/Judge/judge.png">
+        <meta charset="UTF-8">
+        <style>
+            body {
+                background-color: black;
+                background-image: url("media/Do/you/wish/to/see/bg.jpg");
+                background-position: center;
+                color:rgb(255, 0, 0);
+                font-family: 'Times New Roman', Times, serif;
+                text-align: center;
+                margin: 0;
+                padding: 0;
+            }
+            table {
+                border: 3px solid rgb(255, 0, 0);
+                background-color: black;
+                margin: auto;
+                padding: 10px;
+            }
+            td {
+                padding: 10px;
+                vertical-align: top;
+                position: relative;
+                text-align: center;
+            }
+            h1 {
+                color:brown;
+                font-size: 36px;
+                text-shadow: 2px 2px red;
+            }
+            p, li {
+                font-size: 16px;
+                color:rgb(255, 0, 0);
+            }
+            button {
+                background-color: red;
+                text-align: center;
+                white-space: pre;
+            }
+            .title {
+                font-size: 42px;
+            }
+            .blink {
+                animation: blink 2s step-end infinite;
+            }
+            .rune {
+                display: grid;
+                place-items: center;
+            }
+            .rune img {
+                grid-area: 1 / 1;
+            }
+            .purity {
+                opacity: 0.3;
+            }
+            .sigil {
+                position: fixed;
+                top: 0;
+                width: 128px;
+                height: 100vh;
+                background-repeat: repeat-y;
+                background-size: 128px 128px;
+                pointer-events: none;
+                z-index: 9999;
+                opacity: 0.5;
+            }
+            .sigil-feather {
+                left: 0;
+                background-image: url("media/Weigh/your/feather./feather.gif");
+            }
+            .sigil-heart {
+                right: 0;
+                background-image: url("media/Weigh/your/heart./heart.gif");
+            }
+            .judge {
+                position: absolute;   
+                right: -50px;       
+                top: 50%;          
+                transform: translateY(-105%);
+                max-height: 341px;  
+                width: auto;  
+                z-index: 66;
+            }
+            @keyframes blink {
+                50% { opacity: 0; }
+            } 
+        </style>
+    </head>
+    <body>
+    <div class="sigil sigil-feather blink"></div>
+    <div class="sigil sigil-heart blink"></div>
+    <p></p>
+        <table width="600">
+            <tr>
+                <td>
+                    <h1 class="title">+=- Count Your Sins -=+</h1>
+                    <p>You Will Be Held Accountable For. . .</p>
+                    <h1 id="random-number"></h1>
+                    <p>Evil Deeds.</p>
+                    <button id="start">        
+  ,d88b.d88b,
+  88888888888
+  `Y8888888Y'
+    `Y888Y'
+    `Y'
+                    </button>
+                    <audio id="bgm" src="media/❤/your_heart.mp3" loop></audio>
+                    <script>
+                        document.getElementById("start").addEventListener("click", function() {
+                        document.getElementById("bgm").play();
+                    });
+                    </script>
+                    <img src="media/Do/you/wish/to/see/the/Judge/judge.png" class="judge">
+                    <p>I Have Seen the Things Wrought by Your Hands.</p>
+                    <p>You Are a Creature Of. . .</p>
+                    <div class="rune">
+                        <img id="sinImage" src="">
+                        <img class=purity src="media/Weigh/your/pure_sigils.png">
+                    </div>
+                    <img id="sinImage" src="">
+                    <h1 id="sinText">Loading...</h1>
+                    <p>For Your Sins, You Will Be Judged.</p>
+                    <script>
+                        const params = new URLSearchParams(window.location.search);
+                        const num = Math.floor(Math.random() * 100)*666;
+                        const sin = params.get("sin");
+                        const text = params.get("text");
+                        document.getElementById("random-number").textContent = num;
+                        const imgElement = document.getElementById("sinImage");
+                        const textElement = document.getElementById("sinText")
+                        const images = {"envy":"media/You/know/what/you've/done./envy.gif", "gluttony":"media/You/know/what/you've/done./gluttony.gif", "greed":"media/You/know/what/you've/done./greed.gif", "lust":"media/You/know/what/you've/done./lust.gif", "pride":"media/You/know/what/you've/done./pride.gif", "sloth":"media/You/know/what/you've/done./sloth.gif", "wrath":"media/You/know/what/you've/done./wrath.gif"};
+                        if(images[sin]) {
+                            imgElement.src = images[sin];
+                        } else {
+                            imgElement.src = "media/You/know/what/you've/done./malice.gif";
+                        }
+                        if(text) {
+                            textElement.textContent = text;
+                        } else {
+                            textElement.textContent = "Murder. Deceit. Torture."
+                        }
+                    </script>
+                </td>
+            </tr>
+        </table>
+    </body>    
+</html>
